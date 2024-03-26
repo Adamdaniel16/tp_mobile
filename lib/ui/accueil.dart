@@ -22,7 +22,7 @@ class _AccueilPageState extends State<Accueil> {
               const Padding(padding: EdgeInsets.all(80.0),),
               ElevatedButton(
                   style: const ButtonStyle(
-                    padding: MaterialStatePropertyAll(EdgeInsets.symmetric(horizontal: 40, vertical: 20)), ,
+                    padding: MaterialStatePropertyAll(EdgeInsets.symmetric(horizontal: 40, vertical: 20)),
                     backgroundColor: MaterialStatePropertyAll(Colors.deepPurple),
                   ),
                   child: const Text('Jouer', style: TextStyle(color: Color(0xFFD2CCEF)),),

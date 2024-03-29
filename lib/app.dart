@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tp_mobile/models/partie.dart';
 import 'package:tp_mobile/ui/accueil.dart';
 
 class MyApp extends StatelessWidget {
@@ -29,6 +30,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      // home: const MyAccueil(title: 'Flutter Demo Home Page'),
+      // home: const MyJeu(title: 'Flutter Demo Home Page'),
+      // home: PageNom(),
+      // home: PageJeu(),
       home: const Accueil(),
     );
   }

@@ -5,14 +5,14 @@ class PageRegles extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final titreStyle = TextStyle(
+    final titreStyle = const TextStyle(
       fontSize: 20,
       fontWeight: FontWeight.bold,
     );
     return Scaffold(
       backgroundColor: const Color(0xFF243B57),
       appBar: AppBar(
-        title: Text('RÈGLE DU JEU',
+        title: const Text('RÈGLE DU JEU',
           style: TextStyle(
               color: Colors.black,
               fontSize: 35,
@@ -38,30 +38,30 @@ class PageRegles extends StatelessWidget {
                     "But du jeu",
                     style: titreStyle,
                   ),
-                  Text(
+                  const Text(
                     "Deviner un nombre magique aléatoire entre deux bornes."
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Text(
                     "Déroulement du jeu",
                     style: titreStyle,
                   ),
-                  Text(
+                  const Text(
                     "- Niveau 1: Le nombre magique est compris entre 0 et 10. Le joueur a 5 vies."
                   ),
-                  Text(
+                  const Text(
                     "- Deviner le nombre: Le joueur propose un nombre"
                   ),
-                  Text(
+                  const Text(
                     "- Perdre une vie: Le joueur propose un nombre incorrect."
                   ),
-                  Text(
+                  const Text(
                     "- Gagner un niveau: Le joueur trouve le nombre magique."
                   ),
-                  Text(
+                  const Text(
                     "- Le niveau suivant augmente de 10 (20 pour le niveau 2, etc.) et le nombre de vies du joueur est réinitialisé à 5."
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Text(
                     "Amusez-vous!",
                     style: titreStyle,

@@ -17,7 +17,7 @@ class _PageJeuState extends State<PageJeu> {
     backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
     foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
     side: MaterialStateProperty.all<BorderSide>(
-      BorderSide(color: Colors.black, width: 1.0),
+      const BorderSide(color: Colors.black, width: 1.0),
     ),
   );
 
@@ -107,8 +107,8 @@ class _PageJeuState extends State<PageJeu> {
                             partie.name = prenomController.text;
                             _lancer();
                           },
-                          child: const Text("Continuer"),
                           style: commonButtonStyle,
+                          child: const Text("Continuer"),
                         ),
                       ],
                     )
@@ -128,7 +128,7 @@ class _PageJeuState extends State<PageJeu> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.all(20),
+              margin: const EdgeInsets.all(20),
               height: 40.0,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -175,7 +175,7 @@ class _PageJeuState extends State<PageJeu> {
                       labelText: "Réponse",
                       labelStyle: TextStyle(color: Colors.white),
                     ),
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   ),
                   ElevatedButton(
                       style: commonButtonStyle,
@@ -223,7 +223,7 @@ class _PageJeuState extends State<PageJeu> {
                       onPressed: (){
                         _incrementNiv();
                       },
-                      child: Text('Continuer'),
+                      child: const Text('Continuer'),
                     ),
                   ],
                 )
@@ -261,15 +261,12 @@ class _PageJeuState extends State<PageJeu> {
               children: [
                 FloatingActionButton(
                   onPressed: () {
-                    // partie.saveScore();
                     _lancer();
                   },
                   child: const Icon(Icons.replay),
                 ),
                 FloatingActionButton(
                   onPressed: () {
-                    // partie.saveScore();
-                    // partie.debug();
                     Navigator.pop(context);
                   },
                   child: const Icon(Icons.home),

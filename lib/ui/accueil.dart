@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tp_mobile/ui/regle.dart';
 import 'package:tp_mobile/ui/scores.dart';
-
 import 'jeu.dart';
 
 class Accueil extends StatefulWidget {
@@ -47,7 +46,7 @@ class _AccueilPageState extends State<Accueil> {
                 onPressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PageJeu()
+                      MaterialPageRoute(builder: (context) => const PageJeu()
                       )
                   );
                 },
@@ -59,7 +58,7 @@ class _AccueilPageState extends State<Accueil> {
                 onPressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PageScores()
+                      MaterialPageRoute(builder: (context) => const PageScores()
                       )
                   );
                 },
@@ -71,7 +70,7 @@ class _AccueilPageState extends State<Accueil> {
                 onPressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PageRegles(),
+                      MaterialPageRoute(builder: (context) => const PageRegles(),
                       )
                   );
                 },

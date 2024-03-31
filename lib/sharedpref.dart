@@ -2,10 +2,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPrefUtils {
 
-  static Future<SharedPreferences> getInstance() async {
-    return await SharedPreferences.getInstance();
-  }
-
   Future<void> save(String name, int difficulty) async {
     final prefs = await SharedPreferences.getInstance();
     int id = prefs.getKeys().length + 1;
@@ -14,7 +10,7 @@ class SharedPrefUtils {
   }
 
   static Future<List<Tuple3<int, String, int>>> getAllData() async {
-    final prefs = await getInstance();
+    final prefs = await SharedPreferences.getInstance();
     final allKeys = prefs.getKeys();
     final data = <Tuple2<String, int>>[];
 

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import 'jeu.dart';
 import '../sharedpref.dart';
 
 class PageScores extends StatelessWidget {
@@ -11,7 +9,7 @@ class PageScores extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFF243B57),
       appBar: AppBar(
-          title: Text('LES SCORES',
+          title: const Text('LES SCORES',
             style: TextStyle(
                 color: Colors.black,
                 fontSize: 35,
@@ -53,22 +51,20 @@ class PageScores extends StatelessWidget {
   }
 
   Widget _buildScoreEntry(Tuple3<int, String, int> data) {
-    final style = TextStyle(
+    const style = TextStyle(
       fontSize: 20,
       fontWeight: FontWeight.bold,
     );
 
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
-      // Customize appearance as needed
       child: Row(
         children: [
           Text('${data.position}. ',
               style: style),
-          Text('${data.name}',
+          Text(data.name,
               style: style),
           const Spacer(),
-          // Visually highlight the score value
           Text('${data.niveau}',
               style: style),
         ],

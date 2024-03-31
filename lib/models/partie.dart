@@ -71,14 +71,4 @@ class Partie {
       print("ERREUR: $error");
     }
   }
-
-  Future<void> debug() async {
-    final prefs = await SharedPrefUtils.getInstance();
-    // print(prefs.getString('1711817472024'));
-     // print(prefs.getInt('ASA'));
-    final test = await SharedPrefUtils.getAllData();
-    print(test);
-     // print(prefs.getKeys());
-     //print(prefs.getString('5'));
-  }
 }

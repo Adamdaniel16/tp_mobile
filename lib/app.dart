@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tp_mobile/models/partie.dart';
 import 'package:tp_mobile/ui/accueil.dart';
 
 class MyApp extends StatelessWidget {
@@ -27,8 +26,9 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFD9D9D9)),
         useMaterial3: true,
+        fontFamily: 'IrishGrover',
       ),
       // home: const MyAccueil(title: 'Flutter Demo Home Page'),
       // home: const MyJeu(title: 'Flutter Demo Home Page'),

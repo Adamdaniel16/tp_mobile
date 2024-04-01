@@ -48,6 +48,7 @@ class Partie {
   void incrementNiv(BuildContext context){
     vie = 5;
     difficulty++;
+    min = 0;
     max = 10*difficulty;
     nombre = generateNombre(max);
     trouve = false;

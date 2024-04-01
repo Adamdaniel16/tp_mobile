@@ -31,8 +31,10 @@ class _PageJeuState extends State<PageJeu> {
       partie.tentative(context, rep);
       if(rep > partie.nombre){
         message = 'Le nombre magique est plus petit que $rep';
+        partie.max = rep-1;
       }else if(rep < partie.nombre){
         message = 'Le nombre magique est plus grand que $rep';
+        partie.min = rep+1;
       }
     });
   }
@@ -180,11 +182,20 @@ class _PageJeuState extends State<PageJeu> {
                   ElevatedButton(
                       style: commonButtonStyle,
                       onPressed: () {
-                        var repInt = int.tryParse(reponseController.text);
-                        if((repInt!<=partie.max) && (repInt>=partie.min)){
-                          _tentative(context, repInt);
+                        try{
+                          var repInt = int.tryParse(reponseController.text);
+                          if((repInt!<=partie.max) && (repInt>=partie.min)){
+                            _tentative(context, repInt);
+                          }else{
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text('Le chiffre doit être compris entre ${partie.min} et ${partie.max}'))
+                            );
+                          }
+                        }catch(e){
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text('La réponse doit être un entier'))
+                          );
                         }
-
                       },
                       child: const Text("Submit"))
                 ],

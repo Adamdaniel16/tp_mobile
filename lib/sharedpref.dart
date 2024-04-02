@@ -28,6 +28,22 @@ class SharedPrefUtils {
     }
     return res;
   }
+
+  static Future<bool> existe(String prenom) async {
+    final instances = await SharedPreferences.getInstance();
+    final joueurs = instances.getKeys();
+    for(int i=0; i<joueurs.length; i++) {
+      if (joueurs.elementAt(i) == prenom){
+        return true;
+      }
+    }
+    return false;
+  }
+
+  static Future<int?> getNiveau(String prenom) async {
+    final instances = await SharedPreferences.getInstance();
+    return instances.getInt(prenom);
+  }
 }
 
 class Tuple2<T1, T2> {

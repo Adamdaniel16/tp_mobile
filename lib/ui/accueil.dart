@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tp_mobile/ui/regle.dart';
 import 'package:tp_mobile/ui/scores.dart';
 import 'jeu.dart';
@@ -68,6 +69,7 @@ class _AccueilPageState extends State<Accueil> {
                 style: buttonStyle,
                 child: const Text('Règles du jeu', style: TextStyle(color: Colors.black, fontSize: 20),),
                 onPressed: () {
+                  SharedPreferences.getInstance();
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const PageRegles(),

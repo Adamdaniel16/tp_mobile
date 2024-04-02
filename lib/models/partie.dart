@@ -29,10 +29,9 @@ class Partie {
     return vie == 0;
   }
 
-  void reset(BuildContext context){
+  void reset(){
     vie = 5;
     min = 0;
-    max = 10;
     nombre = generateNombre(max);
     perdu = false;
     trouve = false;
@@ -64,8 +63,8 @@ class Partie {
       final prefs = await SharedPreferences.getInstance();
 
       final score = prefs.getInt(name) ?? 0;
-      if(score < difficulty){
-        await prefs.setInt(name, difficulty);
+      if(score < difficulty-1){
+        await prefs.setInt(name, difficulty-1);
       }
       print("Score enregistré avec\nnom: name \nniveau: difficulty");
     } catch (error) {

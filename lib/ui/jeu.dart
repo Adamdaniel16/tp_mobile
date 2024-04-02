@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tp_mobile/sharedpref.dart';
 import '../models/partie.dart';
 
 class PageJeu extends StatefulWidget {
@@ -12,6 +13,7 @@ class PageJeu extends StatefulWidget {
 class _PageJeuState extends State<PageJeu> {
   late Partie partie;
   late String message;
+  late String prenom;
 
   final commonButtonStyle = ButtonStyle(
     backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
@@ -39,11 +41,21 @@ class _PageJeuState extends State<PageJeu> {
     });
   }
 
-  void _lancer(){
-    setState(() {
-      partie.difficulty = 1;
-      partie.reset(context);
-    });
+  Future<void> _lancer(String prenom) async {
+    if(await SharedPrefUtils.existe(prenom)){
+      var diff = await SharedPrefUtils.getNiveau(prenom) as int;
+      setState(() {
+        partie.difficulty = diff+1;
+        partie.max = 10*partie.difficulty;
+        partie.reset();
+      });
+    }else{
+      setState(() {
+        partie.difficulty = 1;
+        partie.max = 10;
+        partie.reset();
+      });
+    }
   }
 
   void _incrementNiv(){
@@ -72,8 +84,11 @@ class _PageJeuState extends State<PageJeu> {
     if(partie.vie>0){
       return pageJouer(context);
     }
-    partie.saveScore();
-    return pagePerdu(context);
+    if(partie.vie == 0){
+      partie.saveScore();
+      return pagePerdu(context);
+    }
+    return Center();
   }
 
   Scaffold pageNom(BuildContext context){
@@ -107,7 +122,16 @@ class _PageJeuState extends State<PageJeu> {
                         ElevatedButton(
                           onPressed: () {
                             partie.name = prenomController.text;
-                            _lancer();
+                            if(prenomController.text == ""){
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text('Le prénom ne peut pas être vide'),
+                                )
+                              );
+                            }else{
+                              prenom = prenomController.text;
+                              _lancer(prenomController.text);
+                            }
                           },
                           style: commonButtonStyle,
                           child: const Text("Continuer"),
@@ -135,6 +159,11 @@ class _PageJeuState extends State<PageJeu> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Icon(Icons.arrow_back),),
                   Text(
                       'Niveau ${partie.difficulty}',
                       style: const TextStyle(
@@ -272,7 +301,7 @@ class _PageJeuState extends State<PageJeu> {
               children: [
                 FloatingActionButton(
                   onPressed: () {
-                    _lancer();
+                    _lancer(prenom);
                   },
                   child: const Icon(Icons.replay),
                 ),

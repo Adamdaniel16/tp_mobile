@@ -161,6 +161,7 @@ class _PageJeuState extends State<PageJeu> {
                 children: [
                   ElevatedButton(
                     onPressed: () {
+                      partie.saveScore();
                       Navigator.pop(context);
                     },
                     child: const Icon(Icons.arrow_back),),

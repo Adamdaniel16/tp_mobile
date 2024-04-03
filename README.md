@@ -1,16 +1,37 @@
-# tp_mobile
+# TP Noté DÉVELOPPEMENT MOBILE - Et si on jouait ?
 
-A new Flutter project.
+Membres:
+- BIN ZULKORNAIN Adam Daniel
+- LOISEAU Yohann
 
-## Getting Started
+## Présentation du jeu
 
-This project is a starting point for a Flutter application.
+- But du jeu: Deviner un nombre magique aléatoire entre deux bornes.
 
-A few resources to get you started if this is your first Flutter project:
+- Déroulement du jeu:
+    - Niveau 1: Le nombre magique est compris entre 0 et 10. Le joueur a 5 vies.
+    - Deviner le nombre: Le joueur propose un nombre
+    - Perdre une vie: Le joueur propose un nombre incorrect.
+    - Gagner un niveau: Le joueur trouve le nombre magique.
+    - Le niveau suivant augmente de 10 (20 pour le niveau 2, etc.) et le nombre de vies du joueur est réinitialisé à 5.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Fonctionnalités et contraintes
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Fonctionnalités implémentées
+    - Page d’accueil avec une image sympa et trois boutons (démarrer une partie, voir mes scores, les règles)
+    - Gestion de prénom pour le sauvegarde pour du score
+    - Enregistrement de niveau avec le prénom
+    - Gestion des niveaux de jeu (s'augmente après réussir une partie)
+    - Conservation de l’historique des scores
+    - Reprise du jeu au dernier niveau non franchi
+
+- Contraintes
+    - Utilisation des Shared Preferences pour stocker de l’information (fonctionne sur Emulator et Chrome)
+    - Utilisation de formulaires (entrer prénom), boites de dialogues (message d'erreur)
+    - Insertion des images
+    - Modification de style de police
+
+## Technologies utilisés
+- Projet Flutter et Dart
+- Shared Preferences
+- GitHub

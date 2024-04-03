@@ -4,6 +4,9 @@ Membres:
 - BIN ZULKORNAIN Adam Daniel
 - LOISEAU Yohann
 
+## Conseil
+- Il vaut mieux utiliser Emulator pour que tout fonctionne correctement
+
 ## Présentation du jeu
 
 - But du jeu: Deviner un nombre magique aléatoire entre deux bornes.
@@ -19,9 +22,9 @@ Membres:
 
 - Fonctionnalités implémentées
     - Page d’accueil avec une image sympa et trois boutons (démarrer une partie, voir mes scores, les règles)
-    - Gestion de prénom pour le sauvegarde pour du score
+    - Gestion de prénom pour la sauvegarde du score
     - Enregistrement de niveau avec le prénom
-    - Gestion des niveaux de jeu (s'augmente après réussir une partie)
+    - Gestion des niveaux de jeu (s'augmente après la réussite une partie)
     - Conservation de l’historique des scores
     - Reprise du jeu au dernier niveau non franchi
 
